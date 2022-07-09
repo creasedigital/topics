@@ -33,6 +33,7 @@ const Posts = () => {
 			await makeApiCall();
 		}
 		fetchData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPage]);
 
 	const doNext = () => {
