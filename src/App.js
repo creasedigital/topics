@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router";
+import Posts from "./views/Posts";
+import PostDetail from "./views/PostDetail";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Box minHeight={"100vh"} overflowX={"hidden"}>
+			<Box as="nav" bg="red" p={4}>
+				<Flex justifyContent="center" alignItems="center">
+					<Heading as="h1" color="white" fontSize="4rem">
+						<a href="/">TOPICS</a>
+					</Heading>
+				</Flex>
+			</Box>
+			<Box overflowX={"hidden"} w="full">
+				<Router>
+					<Routes>
+						<Route path="/posts/:id" element={<PostDetail />} />
+						<Route path="/" element={<Posts />} />
+					</Routes>
+				</Router>
+			</Box>
+		</Box>
+	);
 }
 
 export default App;
