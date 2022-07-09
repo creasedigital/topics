@@ -56,6 +56,7 @@ const Posts = () => {
 					>
 						<Text
 							_hover={{ fontWeight: "bold" }}
+							display="inline-block"
 							onClick={() => navigate(`/posts/${item.id}`)}
 						>
 							{item.title}
